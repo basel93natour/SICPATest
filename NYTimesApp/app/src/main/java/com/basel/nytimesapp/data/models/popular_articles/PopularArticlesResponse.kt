@@ -1,4 +1,4 @@
-package com.basel.nytimesapp.data.remote.popular_articles
+package com.basel.nytimesapp.data.models.popular_articles
 
 
 data class PopularArticlesResponse(

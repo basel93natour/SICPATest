@@ -1,11 +1,10 @@
 package com.basel.nytimesapp.data.local
 
 import androidx.lifecycle.LiveData
-import androidx.paging.DataSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.basel.nytimesapp.data.remote.popular_articles.PopularArticlesModel
+import com.basel.nytimesapp.data.models.popular_articles.PopularArticlesModel
 
 @Dao
 interface PopularArticlesDao {

@@ -1,4 +1,4 @@
-package com.basel.nytimesapp.data.remote.search_articles
+package com.basel.nytimesapp.data.models.search_articles
 
 data class Meta(
     val hits: Int,

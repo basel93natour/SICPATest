@@ -1,4 +1,4 @@
-package com.basel.nytimesapp.data.remote.popular_articles
+package com.basel.nytimesapp.data.models.popular_articles
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -6,8 +6,7 @@ import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
-import com.basel.nytimesapp.data.remote.popular_articles.PopularArticlesModel
-import com.basel.nytimesapp.data.remote.search_articles.SearchArticleModel
+import com.basel.nytimesapp.data.models.search_articles.SearchArticleModel
 import com.basel.nytimesapp.getOrAwaitValue
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -47,9 +46,8 @@ class ArticlesDaoTest {
     fun testInsertArticleIntoDB() = runBlockingTest{
         val article= SearchArticleModel( "test","",  "")
         dao.insertArticle(article)
-        val data=dao.getAllArticles()
-        val observeArticleTable=data.toLiveData(10).getOrAwaitValue()
-        assertThat(observeArticleTable).contains(article)
+        val data=dao.getAllArticles().getOrAwaitValue()
+        assertThat(data).contains(article)
     }
 
 
