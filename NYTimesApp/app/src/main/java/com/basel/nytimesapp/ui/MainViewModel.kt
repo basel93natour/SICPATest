@@ -18,12 +18,12 @@ class MainViewModel @ViewModelInject constructor(private val dataRepository: Dat
     val searchResponse = MutableLiveData<Resource<List<SearchArticleModel>>>()
 
 
-    fun getArticlesData(): LiveData<PagingData<SearchArticleModel>> {
-        return dataRepository.getArticles("election").cachedIn(viewModelScope)
+    fun getArticlesByKeyword(keyword : String): LiveData<PagingData<SearchArticleModel>> {
+        return dataRepository.getArticles(keyword).cachedIn(viewModelScope)
     }
 
-    fun getSavedArticlesData(): LiveData<PagingData<SearchArticleModel>> {
-        return dataRepository.getSavedArticles().cachedIn(viewModelScope)
+    fun searchSavedArticlesData(keyword : String): LiveData<PagingData<SearchArticleModel>> {
+        return dataRepository.getSavedArticles(keyword).cachedIn(viewModelScope)
     }
 
 

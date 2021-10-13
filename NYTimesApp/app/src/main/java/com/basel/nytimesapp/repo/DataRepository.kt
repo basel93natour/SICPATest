@@ -44,11 +44,10 @@ class DataRepository @Inject constructor(private val nyTimesApiService: NYTimesA
         ).liveData
     }
 
-    fun getSavedArticles() : LiveData<PagingData<SearchArticleModel>>{
-        val response=searchArticlesDao.getAllArticlesByKeyword()
+    fun getSavedArticles(keyword: String) : LiveData<PagingData<SearchArticleModel>>{
         return Pager(
             config = PagingConfig(enablePlaceholders = false, pageSize = 10),
-            pagingSourceFactory = { searchArticlesDao.getAllArticlesByKeyword() }
+            pagingSourceFactory = { searchArticlesDao.getAllArticlesByKeyword(keyword) }
         ).liveData
     }
 }
