@@ -20,7 +20,10 @@ interface PopularArticlesDao {
     suspend fun insertArticles(articles : List<PopularArticlesModel>)
 
     @Query("select * from popular_articles where articleType=:type")
-    fun getAllArticles(type : Constants.ArticlesTypes) : Flow<List<PopularArticlesModel>>
+    fun getAllArticlesByType(type : Constants.ArticlesTypes) : Flow<List<PopularArticlesModel>>
+
+    @Query("select * from popular_articles ")
+    fun getAllArticles() : Flow<List<PopularArticlesModel>>
 
     @Query("DELETE FROM popular_articles")
     suspend fun deleteAllArticles()

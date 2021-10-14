@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.basel.nytimesapp.R
 import com.basel.nytimesapp.data.Constants
+import com.basel.nytimesapp.ui.search_articles.SearchFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.main_fragment.*
 
@@ -61,17 +62,13 @@ class MainFragment : Fragment() {
 
     private fun navigateToSearchFragment()
     {
-        val navHostFragment =
-            activity?.supportFragmentManager?.findFragmentById(R.id.appNavigationHost) as NavHostFragment
-        navHostFragment.navController.navigate(R.id.navigate_main_to_search)
+        findNavController().navigate(MainFragmentDirections.navigateMainToSearch())
     }
 
     private fun navigateToArticlesFragment(articleType: Constants.ArticlesTypes)
     {
         viewModel.getPopularArticles(articleType)
-        val navHostFragment =
-            activity?.supportFragmentManager?.findFragmentById(R.id.appNavigationHost) as NavHostFragment
-        navHostFragment.navController.navigate(R.id.navigate_main_to_popular)
+        findNavController().navigate(MainFragmentDirections.navigateMainToPopular())
     }
 
 

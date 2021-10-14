@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.basel.nytimesapp">
+
+    <application>
+        <!-- android:exported means we only access this activity from its package -->
+        <activity android:name=".TestHiltActivity"
+            android:exported="false">
+        </activity>
+    </application>
+
+</manifest>

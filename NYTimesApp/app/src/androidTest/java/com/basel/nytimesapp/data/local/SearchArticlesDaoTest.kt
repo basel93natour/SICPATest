@@ -1,6 +1,7 @@
 package com.basel.nytimesapp.data.local
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.asLiveData
 import androidx.paging.toLiveData
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
@@ -20,7 +21,7 @@ import org.junit.runner.RunWith
 @ExperimentalCoroutinesApi
 @RunWith(AndroidJUnit4::class)
 @SmallTest
-class ArticlesDaoTest {
+class SearchArticlesDaoTest {
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -50,5 +51,11 @@ class ArticlesDaoTest {
         assertThat(data).contains(article)
     }
 
+    @Test
+    fun testDeleteAllRecords()  = runBlockingTest{
+        dao.deleteAllArticles()
+        val data=dao.getAllArticles().getOrAwaitValue()
+        assertThat(data).isEmpty()
+    }
 
 }

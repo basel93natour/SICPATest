@@ -6,6 +6,8 @@ import com.basel.nytimesapp.data.local.AppDatabase
 import com.basel.nytimesapp.data.local.PopularArticlesDao
 import com.basel.nytimesapp.data.local.SearchArticlesDao
 import com.basel.nytimesapp.network.NYTimesApiService
+import com.basel.nytimesapp.repo.DataRepository
+import com.basel.nytimesapp.repo.DataRepositoryImpl
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -64,5 +66,12 @@ object AppModule {
     fun provideSearchArticlesDao(appDatabase: AppDatabase): SearchArticlesDao {
         return appDatabase.searchArticlesDao()
     }
+
+    @Provides
+    @Singleton
+    fun provideDataRepository( nyTimesApiService: NYTimesApiService,
+                               appDatabase: AppDatabase,
+                               popularArticlesDao: PopularArticlesDao,
+                               searchArticlesDao: SearchArticlesDao) : DataRepository = DataRepositoryImpl(nyTimesApiService,appDatabase,popularArticlesDao,searchArticlesDao)
 
 }

@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.basel.nytimesapp.R
 import com.basel.nytimesapp.data.Constants
 import com.basel.nytimesapp.ui.MainViewModel
@@ -39,13 +41,18 @@ class SearchFragment : Fragment() {
                 navigateToArticlesFragment()
         }
 
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                findNavController().popBackStack()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
+
     }
 
     private fun navigateToArticlesFragment()
     {
         viewModel.getArticlesByKeyword(keyword)
-        val navHostFragment =
-            activity?.supportFragmentManager?.findFragmentById(R.id.appNavigationHost) as NavHostFragment
-        navHostFragment.navController.navigate(R.id.navigate_search_to_articles)
+        findNavController().navigate(SearchFragmentDirections.navigateSearchToArticles())
     }
 }
