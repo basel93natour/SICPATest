@@ -34,8 +34,6 @@ object AppModule {
             OkHttpClient.Builder().addInterceptor(
                 HttpLoggingInterceptor()
             .apply { this.level= HttpLoggingInterceptor.Level.BODY })
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
             .build())
         .build()
 

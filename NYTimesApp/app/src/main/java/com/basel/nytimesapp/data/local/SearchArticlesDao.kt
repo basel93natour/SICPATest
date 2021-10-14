@@ -23,8 +23,8 @@ interface SearchArticlesDao {
     @Query("select * from search_articles")
     fun getAllArticles() : LiveData<List<SearchArticleModel>>
 
-    @Query("select * from search_articles where title like :keyword")
-    fun getAllArticlesByKeyword(keyword :String) : PagingSource<Int, SearchArticleModel>
+    @Query("select * from search_articles")
+    fun getAllArticlesByKeyword() : PagingSource<Int, SearchArticleModel>
 
 
     @Query("DELETE FROM search_articles")

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nyt"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_10sdp"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/search_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:paddingStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@+id/search_label"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/search_articles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_articles"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:drawableEndCompat="@drawable/right_arrow" />
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/search_articles"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/popular_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popular"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:paddingStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
+        />
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+
+        app:layout_constraintTop_toBottomOf="@+id/popular_label"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/most_viewed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/most_viewed"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        app:drawableEndCompat="@drawable/right_arrow" />
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/most_viewed"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/most_shared"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/most_shared"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:drawableEndCompat="@drawable/right_arrow" />
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/most_shared"
+        android:background="@color/black"/>
+    <TextView
+        android:id="@+id/most_emailed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/most_emailed"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6"
+        app:drawableEndCompat="@drawable/right_arrow" />
+    <View
+        android:id="@+id/view7"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/most_emailed"
+        android:background="@color/black"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

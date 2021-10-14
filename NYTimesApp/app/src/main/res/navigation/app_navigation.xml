@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/mainFragment">
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.basel.nytimesapp.ui.MainFragment"
+        android:label="@string/app_name">
+
+        <action
+            android:id="@+id/navigate_main_to_search"
+            app:destination="@id/searchFragmnet" />
+        <action
+            android:id="@+id/navigate_main_to_popular"
+            app:destination="@id/articlesFragmnet" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragmnet"
+        android:name="com.basel.nytimesapp.ui.search_articles.SearchFragment"
+        android:label="@string/search">
+        <action
+            android:id="@+id/navigate_search_to_articles"
+            app:destination="@id/searchArticlesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/articlesFragmnet"
+        android:name="com.basel.nytimesapp.ui.articles.ArticlesFragment"
+        android:label="@string/popular"/>
+
+    <fragment
+        android:id="@+id/searchArticlesFragment"
+        android:name="com.basel.nytimesapp.ui.search_articles.SearchArticlesFragment"
+        android:label="@string/search_articles"/>
+
+</navigation>

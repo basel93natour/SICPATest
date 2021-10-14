@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">NYTimesApp</string>
+    <string name="nyt">NYT</string>
+    <string name="search">Search</string>
+    <string name="search_articles">Search Articles</string>
+    <string name="popular">Popular</string>
+    <string name="most_viewed">Most Viewed</string>
+    <string name="most_shared">Most Shared</string>
+    <string name="most_emailed">Most Emailed</string>
+    <string name="search_articles_here">Search Articles here..</string>
+    <string name="articles">Articles</string>
+    <string name="mandatory_field">Mandatory Field</string>
+
 </resources>

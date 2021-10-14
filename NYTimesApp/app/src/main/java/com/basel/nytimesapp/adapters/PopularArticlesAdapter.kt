@@ -4,20 +4,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.core.view.isVisible
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.basel.nytimesapp.R
+import com.basel.nytimesapp.data.models.popular_articles.PopularArticlesModel
 import com.basel.nytimesapp.data.models.search_articles.SearchArticleModel
 
-class SearchArticlesAdapter : PagingDataAdapter<SearchArticleModel, SearchArticlesAdapter.ViewHolder>(ArticlesDiffCallback()) {
+class PopularArticlesAdapter(private val articles : List<PopularArticlesModel>) : RecyclerView.Adapter<PopularArticlesAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        holder.title.text=getItem(position)?.title
-        holder.publishDate.text=getItem(position)?.pub_date
+        holder.title.text=articles[position].title
+        holder.publishDate.text=articles[position].published_date
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,16 +32,7 @@ class SearchArticlesAdapter : PagingDataAdapter<SearchArticleModel, SearchArticl
     }
 
     override fun getItemCount(): Int {
-        return super.getItemCount()
+        return articles.size
     }
 
-    private class ArticlesDiffCallback : DiffUtil.ItemCallback<SearchArticleModel>() {
-        override fun areItemsTheSame(oldItem: SearchArticleModel, newItem: SearchArticleModel): Boolean {
-            return oldItem._id == newItem._id
-        }
-
-        override fun areContentsTheSame(oldItem: SearchArticleModel, newItem: SearchArticleModel): Boolean {
-            return oldItem == newItem
-        }
-    }
 }
